@@ -1,0 +1,52 @@
+{% set name = "cem" %}
+{% set version = "0.1.2" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/csdms-contrib/{{ name }}
+  git_branch: bmi-cem-old
+
+requirements:
+  build:
+    - cmake
+    - gcc # [not win]
+    - pkgconfig-command [osx]
+    - glib [osx]
+  run:
+    - libgcc
+    - glib [osx]
+
+test:
+  commands:
+    - cem --version
+    - cem --help
+
+build:
+  number: 0
+
+about:
+  home: http://csdms.colorado.edu/wiki/Model:CEM
+  license: MIT
+  summary: Coastline evolution model
+  description: |
+    The Coastline Evolution Model (CEM) addresses predominately sandy,
+    wave-dominated coastlines on time-scales ranging from years to
+    millenia and on spatial scales ranging from kilometers to hundreds
+    of kilometers. Shoreline evolution results from gradients in
+    wave-driven alongshore sediment transport. At its most basic level,
+    the model follows the standard 'one-line' modeling approach, where
+    the cross-shore dimension is collapsed into a single data point.
+    However, the model allows the plan-view shoreline to take on arbitrary
+    local orientations, and even fold back upon itself, as complex shapes
+    such as capes and spits form under some wave climates (distributions
+    of wave influences from different approach angles). The model can
+    also represent the geology underlying the sandy coastline and
+    shoreface in a simplified manner and enables the simulation of
+    coastline evolution when sediment supply from an eroding shoreface
+    may be constrained. CEM also supports the simulation of human
+    manipulations to coastline evolution through beach nourishment or
+    hard structures.
+  dev_url: http://github.com/csdms-contrib/cem
