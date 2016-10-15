@@ -13,6 +13,7 @@ requirements:
   build:
     - cmake
     - gcc # [not win]
+    - isl 0.12.2 # [not win]
     - pkgconfig-command [osx]
     - glib [osx]
   run:
