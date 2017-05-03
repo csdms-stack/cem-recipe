@@ -26,7 +26,7 @@ test:
     - cem --help
 
 build:
-  number: 0
+  number: 1
 
 about:
   home: http://csdms.colorado.edu/wiki/Model:CEM
